@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles can be added here */
+        body {
+            background-color: black;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        img{
+            border:3px solid #FFE66D;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        h1,p{
+            color: #FFE66D;
+        }
+        .btn{
+            background-color: #FFE66D !important;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid"> <!-- Changed to container-fluid for full width -->
+        <div class="row justify-content-center"> <!-- Center the row content -->
+            <div class="col-12 col-md-6 text-center"> <!-- Center the image and text -->
+                <img src="<%=base64 %>" class="img-fluid my-3" alt="Product Image"> <!-- Added margin-y for vertical spacing -->
+                <h1 class="mt-3">Shop: <%= shop %></h1> <!-- Added margin-top for spacing -->
+                <p class="price">rs</p>
+                <p class="description">size:</p>
+                <div class="product-actions">
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Include Bootstrap JS (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find It</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    
+    
+     
+</head>
+
+<body class="container text-center">
+    <h3 class="text-left"><%= shopName %></h3>
+    <h1>Relax, let me find it for YOU</h1>    
+    <!-- Drop Zone for Image Upload -->
+    <div id="drop-zone">
+        Drag and drop an image here or click to select
+        <input type="file" id="upload" accept="image/*" capture="environment" style="display:none;">
+        <video id="camera-preview" style="display: none; max-width: 100%; max-height: 190px;"></video>
+        <canvas id="camera-canvas" style="display: none;"></canvas>
+    </div>
+
+    <!-- Camera Button -->
+    <div class="camera-buttons">
+        <button id="camera-btn" class="btn btn-primary">
+            <i class="fas fa-camera"></i> Take Photo
+        </button>
+        <button id="retake-btn" class="btn btn-primary" style="display: none;">
+            <i class="fas fa-redo"></i> Retake
+        </button>
+    </div>
+
+    <!-- Hidden Canvas for Image Processing -->
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <!-- Color Information Area -->
+    <div id="colorArea" class="row w-100">
+        <div class="col-md-6 mb-3">
+            <h3>Yours</h3>
+            <div id="mostFrequentColor"></div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <h3>Contrast</h3>
+            <div id="contrastColors"></div>
+        </div>
+    </div>
+
+    <!-- Color Palette Section -->
+    <div id="palette" class="w-100">
+        <h4 class="w-100">Other Matchings</h4>
+        <div class="paletteColor" id="color1"></div>
+        <div class="paletteColor" id="color2"></div>
+        <div class="paletteColor" id="color3"></div>
+        <div class="paletteColor" id="color4"></div>
+    </div>
+    <button id="change-palette" class="btn btn-primary mb-3">Change Combinations</button>
+
+    <!-- Search Buttons -->
+    <div class="button-container">
+        <button id="search-btn-upper" class="btn btn-primary mb-2">T-Shirts</button>
+        <button id="search-btn-jeans" class="btn btn-primary mb-2">Jeans</button>
+        <button id="search-btn-lower" class="btn btn-primary mb-2">Lowers</button>
+    </div>
+
+
+    <!-- Grid Layout for Images -->
+    <div id="images"></div>
+ <!-- JS Dependencies -->
+ <script src="javascripts/script.js"></script>
+ <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+   
+ 
+</body>
+
+</html>
